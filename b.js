@@ -1,7 +1,18 @@
-function Person(name, age) {
-    this.name = name;
-    this.age = age;
-    this.sayHello = function() {
+// function Person(name, age) {
+    // this.name = name;
+    // this.age = age;
+    // this.sayHello = function() {
+    //     console.log('Hello, I am ' + this.name);
+    // }
+// }
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    sayHello() {
         console.log('Hello, I am ' + this.name);
     }
 }
