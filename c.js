@@ -5,7 +5,8 @@ class Point {
     }
 
     getDistance() {
-        return Math.sqrt(this.x * this.x + this.y * this.y)
+        const { x, y } = this;
+        return Math.sqrt(x * x + y * y);
     }
 }
 
@@ -16,8 +17,9 @@ class Line {
     }
 
     get length() {
-        const dx = this.pointA.x - this.pointB.x;
-        const dy = this.pointA.y - this.pointB.y;
+        const { pointA, pointB } = this;
+        const dx = pointA.x - pointB.x;
+        const dy = pointA.y - pointB.y;
         return Math.sqrt(dx * dx + dy * dy);
     }
 }
@@ -30,9 +32,10 @@ class Triangle {
     }
 
     getPerimeter() {
-        const l1 = new Line(this.pointA, this.pointB);
-        const l2 = new Line(this.pointA, this.pointC);
-        const l3 = new Line(this.pointC, this.pointB);
+        const { pointA, pointB, pointC } = this;
+        const l1 = new Line(pointA, pointB);
+        const l2 = new Line(pointA, pointC);
+        const l3 = new Line(pointC, pointB);
         return l1.length + l2.length + l3.length;
     }
 }
