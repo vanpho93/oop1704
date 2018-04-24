@@ -15,3 +15,9 @@ function showAge({ age }) {
 }
 
 showAge({ age: 10 });
+
+function getTotal(x, y, ...args) {
+    return args.reduce((a, b) => a + b);
+}
+
+console.log(getTotal(1, 3, 5, 6));
